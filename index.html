@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiKompeten · PT AMM</title>
+<meta name="description" content="SiKompeten - Monitoring kompetensi karyawan PT Antareja Mahada Makmur jobsite BC">
+<meta name="theme-color" content="#C8102E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SiKompeten">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+  html,body{margin:0;height:100%;background:#fff;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  #app{position:fixed;inset:0;width:100%;height:100%;border:0;display:block}
+  #load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#C8102E;color:#fff;transition:opacity .3s;z-index:2}
+  #load img{width:96px;height:96px;border-radius:50%;background:#fff}
+  #load b{font-size:20px;letter-spacing:.02em}
+  #load span{font-size:14px;opacity:.9}
+  #load.hide{opacity:0;pointer-events:none}
+  #reload{position:fixed;right:12px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:3;width:40px;height:40px;border-radius:50%;border:0;background:rgba(200,16,46,.85);color:#fff;font-size:20px;line-height:40px;box-shadow:0 2px 10px rgba(0,0,0,.25);cursor:pointer;opacity:.6}
+  #reload:hover{opacity:1}
+</style>
+</head>
+<body>
+<div id="load"><img src="icon-192.png" alt="AMM"><b>SiKompeten</b><span>Memuat aplikasi…</span></div>
+<iframe id="app" title="SiKompeten" allow="camera; clipboard-write" src="https://script.google.com/macros/s/AKfycbx00Vo5Ofyd9-Lmo2CQv56hNWdYxUp1oBGpsFJG9dy04-312qTFKgF8oKqIPwPZjiuf1Q/exec"></iframe>
+<button id="reload" title="Muat ulang" aria-label="Muat ulang">&#x21bb;</button>
+<script>
+  var f=document.getElementById("app"), l=document.getElementById("load");
+  f.addEventListener("load",function(){ setTimeout(function(){ l.classList.add("hide"); },400); });
+  setTimeout(function(){ l.classList.add("hide"); },15000);
+  document.getElementById("reload").onclick=function(){ l.classList.remove("hide"); f.src=f.src; };
+  if("serviceWorker" in navigator){ navigator.serviceWorker.register("sw.js"); }
+</script>
+</body>
+</html>
