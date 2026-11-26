@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SiKompeten · PT AMM</title>
+<title>SiKompeten AMM-BC</title>
 <meta name="description" content="SiKompeten - Monitoring kompetensi karyawan PT Antareja Mahada Makmur jobsite BC">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,9 +16,10 @@
 <style>
   html,body{margin:0;height:100%;background:#fff;overflow:hidden;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
   #app{position:fixed;inset:0;width:100%;height:100%;border:0;display:block}
-  #load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#fff;color:#62656A;transition:opacity .3s;z-index:2}
-  #load img{width:64px;height:64px}
-  #load div{display:flex;align-items:center;gap:8px;font-size:15px}
+  #load{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#fff;color:#62656A;transition:opacity .3s;z-index:2}
+  #load img{width:72px;height:72px;border-radius:50%}
+  #load b{color:#1D1D1F;font-size:18px;font-weight:700;letter-spacing:.01em}
+  #load div{display:flex;align-items:center;gap:8px;font-size:14px}
   #load i{width:14px;height:14px;border-radius:50%;border:2px solid #E3E4E7;border-top-color:#C8102E;animation:p .8s linear infinite}
   @keyframes p{to{transform:rotate(360deg)}}
   #load.hide{opacity:0;pointer-events:none}
@@ -27,7 +28,7 @@
 </style>
 </head>
 <body>
-<div id="load"><img src="icon-192.png" alt="AMM"><div><i></i>Memuat aplikasi…</div></div>
+<div id="load"><img src="icon-192.png" alt="AMM"><b>SiKompeten AMM-BC</b><div><i></i>Memuat aplikasi…</div></div>
 <iframe id="app" title="SiKompeten" allow="camera; clipboard-write" src="https://script.google.com/macros/s/AKfycbx00Vo5Ofyd9-Lmo2CQv56hNWdYxUp1oBGpsFJG9dy04-312qTFKgF8oKqIPwPZjiuf1Q/exec"></iframe>
 <button id="reload" title="Muat ulang" aria-label="Muat ulang">&#x21bb;</button>
 <script>
